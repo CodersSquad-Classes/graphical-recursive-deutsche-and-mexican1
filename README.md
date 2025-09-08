@@ -33,6 +33,8 @@ From the _Essential Algorithms: A Practical Approach to Computer Algorithms_ boo
 - _You must document compilation and execution here_
 - _Don't forget to document which algorithm you're implementing_
 
+# Explanation
+
 # Grading Policy
 
 | **Rubric**                             | **Points** |
