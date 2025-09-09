@@ -1,4 +1,5 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/f_6PzPyj)
+
 # ds-graphical-recursive
 
 Let's get creative. On this lab, you will be creating a recursive program that generates the base for a graphical recursive algorithm. Since we haven't seen any graphics library, you don't need to worry about the visualization, the professor will provide the mechanism ro visualize your data.
@@ -13,27 +14,46 @@ From the _Essential Algorithms: A Practical Approach to Computer Algorithms_ boo
 
 - Each algorithm has its own parameters, make sure you document them in the [following section](#how-to-compile--run-you-program)
 - Parameters must be sent through the command line. Example below:
+
     ```
     ./your-program <param1> <param2> ... 
     ```
+
 - The output of your program will be a list of line segments in a file called `lines.txt`. The `lines.txt` file must follow the following format. Each pair represents a point in a 2D plane
+
     ```
     (1,2)(33,3)
     (3,5)(3,43)
     (2,1)(3,3)
     ```
-- There's a 1024x1024 canvas, make sure that your generated points are inside that limited space. 
+
+- There's a 1024x1024 canvas, make sure that your generated points are inside that limited space.
 - The progressor will provide the mechanism to visualize your data, just make sure you generate the proper `lines.txt` file
-
-
-
 
 # How to compile & run you program
 
-- _You must document compilation and execution here_
-- _Don't forget to document which algorithm you're implementing_
+## Compilation
+
+To compile the program, navigate to the root directory containing main.cpp and Makefile and run the make command:
+
+```
+make
+```
+We are using the Hilbert Algorithm so solve the task.
+
+## How to run it 
+
+```
+./hilbert <order> [canvas_size] [margin]
+```
+
+```
+./hilbert 7 2048 50
+```
 
 # Explanation
+
+ The core logic uses a recursive algorithm based on L-system rules to determine the path of turns and forward movements.  The program calculates the precise start and end coordinates for every line segment needed to construct the shape. These coordinates are then scaled to fit within a specified canvas size, such as 1024x1024 pixels. The final result is written to a text file named lines.txt. Each line in this file represents a single segment in the format (x1,y1)(x2,y2). This data file allows a separate visualization application to easily read and render the fractal without needing to understand the generation algorithm itself.
 
 # Grading Policy
 
